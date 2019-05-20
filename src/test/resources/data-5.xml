@@ -1,0 +1,7 @@
+<dataset>
+	<QUOTES id="1" text="A quote from Author 1." author="Author 1"/>
+	<QUOTES id="2" text="A quote from Author 2." author="Author 2"/>
+	<QUOTES id="3" text="A quote from Author 3." author="Author 3"/>
+	<QUOTES id="4" text="A quote from Author 4." author="Author 4"/>
+	<QUOTES id="5" text="A quote from Author 5." author="Author 5"/>
+</dataset>

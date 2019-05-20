@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  quote-management-service:
+    container_name: quote-management-service
+    image: quote-management-service
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql-db
+  mysql-db:
+    container_name: mysqldb
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root123!@#
+      - MYSQL_DATABASE=up-qms-db
+      - MYSQL_USER=qms-user
+      - MYSQL_PASSWORD=qms123!@#
+    volumes:
+      - ../sql/PERMS.sql:/docker-entrypoint-initdb.d/1-PERMS.sql
+      - ../sql/TABLES.sql:/docker-entrypoint-initdb.d/2-TABLES.sql
+      - ../sql/DATA.sql:/docker-entrypoint-initdb.d/3-DATA.sql

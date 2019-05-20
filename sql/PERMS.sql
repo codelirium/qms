@@ -1,0 +1,1 @@
+GRANT ALL PRIVILEGES ON QUOTES.* TO 'qms-user'@'%';
